@@ -1,2 +1,3 @@
 SITE='site.ru'
-BASIC_AUTH='place-your-code'
+AUTH_LOGIN='1c_exchange@test.ru'
+AUTH_PASS='password'

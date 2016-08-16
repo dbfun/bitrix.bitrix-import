@@ -2,14 +2,14 @@
 
 # Скрипт импорта XML файла в Битрикс
 # Базовые настройки в файле etc/config
-# Штатный импорт import.xml
+# Штатный импорт offers.xml
 
 cd "$(dirname "$0")"
 source etc/config
 
 URI="http://$SITE/bitrix/admin/1c_exchange.php"
 COOK='data/cookiefile.txt'
-FILE='data/import.xml'
+FILE='data/offers.xml'
 STEP_CONTINUE=1
 CHARSET_IN='cp1251'   # кодировка сайта
 CHARSET_OUT='utf-8'   # кодировка консоли
@@ -23,11 +23,11 @@ function init {
 
 function upload {
   echo 'Upload file'
-  curl -s -c $COOK -b $COOK -X POST --data-binary @- $URI'?type=catalog&mode=file&filename=upload-file' -H "Authorization: Basic $BASIC_AUTH" -H 'Content-Type: application/octet-stream' -H 'Expect:' --trace-ascii log/debug.txt < $FILE > log/03-file.txt
+  curl -s -c $COOK -b $COOK -X POST --data-binary @- $URI'?type=catalog&mode=file&filename=offers.xml' -H "Authorization: Basic $BASIC_AUTH" -H 'Content-Type: application/octet-stream' -H 'Expect:' --trace-ascii log/debug.txt < $FILE > log/03-file.txt
 }
 
 function step {
-  curl -s -c $COOK -b $COOK $URI'?type=catalog&mode=import&filename=upload-file' -H "Authorization: Basic $BASIC_AUTH" > log/step.txt
+  curl -s -c $COOK -b $COOK $URI'?type=catalog&mode=import&filename=offers.xml' -H "Authorization: Basic $BASIC_AUTH" > log/step.txt
   if grep -q progress log/step.txt ; then
     STEP_CONTINUE=1
   else
