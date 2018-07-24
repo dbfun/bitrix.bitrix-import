@@ -1,3 +1,5 @@
 SITE='site.ru'
 AUTH_LOGIN='1c_exchange@test.ru'
 AUTH_PASS='password'
+WS_LOGIN='Web_Service_Robot'
+WS_PASS='WS_PASS'

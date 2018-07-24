@@ -1,11 +1,8 @@
 #!/bin/bash
 
-# Скрипт импорта XML файла в Битрикс
-# Базовые настройки в файле etc/config
-# Кастомный импорт CSV файла
+# Скрипт эмуляции WS со стороны 1C
 
-# FILE_TO_IMPORT='spetc_skidki.csv'
-FILE_TO_IMPORT='warehouses.csv'
+FILE_TO_IMPORT='data.json'
 
 cd "$(dirname "$0")"
 source etc/config
@@ -31,7 +28,7 @@ function upload {
 }
 
 function step {
-  curl -s -c $COOK -b $COOK $URI'?type=catalog&mode=import&filename='$FILE_TO_IMPORT -H "Authorization: Basic $BASIC_AUTH" > log/step.txt
+  curl -s -c $COOK -b $COOK $URI'?type=catalog&mode=report&filename='$FILE_TO_IMPORT -H "Authorization: Basic $BASIC_AUTH" > log/step.txt
   if grep -q progress log/step.txt ; then
     STEP_CONTINUE=1
   else

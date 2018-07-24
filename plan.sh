@@ -1,11 +1,9 @@
 #!/bin/bash
 
-# Скрипт импорта XML файла в Битрикс
+# Скрипт импорта JSON файла в Битрикс
 # Базовые настройки в файле etc/config
-# Кастомный импорт CSV файла
 
-# FILE_TO_IMPORT='spetc_skidki.csv'
-FILE_TO_IMPORT='warehouses.csv'
+FILE_TO_IMPORT='PlanPrih.json'
 
 cd "$(dirname "$0")"
 source etc/config
