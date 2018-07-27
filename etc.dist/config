@@ -1,5 +1,10 @@
-SITE='site.ru'
-AUTH_LOGIN='1c_exchange@test.ru'
+# Адрес сайта с протоколом
+SITE=http://site.ru
+# Логин-пароль служебной учетной записи стандартного обмена
+AUTH_LOGIN='1c_exchange@site.ru'
 AUTH_PASS='password'
-WS_LOGIN='Web_Service_Robot'
-WS_PASS='WS_PASS'
+# Логин-пароль веб-сервисов, которые вызывает 1С
+WS_LOGIN='1c_exchange@site.ru'
+WS_PASS='password'
+# Логин-пароль Sellout
+LOGIN_PASS_SELLOUT='login:password'

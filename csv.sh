@@ -10,7 +10,7 @@ FILE_TO_IMPORT='warehouses.csv'
 cd "$(dirname "$0")"
 source etc/config
 
-URI="http://$SITE/bitrix/admin/1c_exchange.php"
+URI="$SITE/bitrix/admin/1c_exchange.php"
 COOK='data/cookiefile.txt'
 FILE="data/$FILE_TO_IMPORT"
 

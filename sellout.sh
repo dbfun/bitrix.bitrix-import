@@ -21,7 +21,7 @@ Cyan='\e[0;36m'         # Cyan
 White='\e[0;37m'        # White
 UCyan='\e[4;36m'        # Cyan
 
-echo -e $UCyan"Server: "$SITE_SELLOUT$Color_Off"\n"
+echo -e $UCyan"Server: "$SITE$Color_Off"\n"
 
 function assert {
 	SUBSTR=`echo "$1" | grep "$2"`
@@ -33,14 +33,14 @@ function assert {
 function testBasicAuth {
 	echo -e $Cyan"Test Basic Auth"$Color_Off
 
-	RESP=`curl -is --user $LOGIN_PASS_SELLOUT $SITE_SELLOUT/api/login/`
+	RESP=`curl -is --user $LOGIN_PASS_SELLOUT $SITE/api/login/`
 	assert "$RESP" 'HTTP/1.1 200 OK'
 	assert "$RESP" 'success'
 }
 
 function ApiSelloutDebug {
 	echo -e $Cyan"API: /api/sellout/"$Color_Off
-	cat data/sellout.json | curl -is --user $LOGIN_PASS_SELLOUT -d @- $SITE_SELLOUT/api/sellout/json/
+	cat data/sellout.json | curl -is --user $LOGIN_PASS_SELLOUT -d @- $SITE/api/sellout/json/
 }
 
 # Базовые проверки

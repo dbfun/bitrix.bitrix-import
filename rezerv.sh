@@ -7,7 +7,7 @@
 cd "$(dirname "$0")"
 source etc/config
 
-URI="http://$SITE/bitrix/admin/1c_exchange.php"
+URI="$SITE/bitrix/admin/1c_exchange.php"
 COOK='data/cookiefile.txt'
 FILE='data/rezerv.zip'
 CHARSET_IN='cp1251'   # кодировка сайта
